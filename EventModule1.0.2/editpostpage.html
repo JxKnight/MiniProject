@@ -1,0 +1,212 @@
+<<!DOCTYPE html>
+  <html lang="en">
+
+
+  <head>
+    <meta charset="utf-8">
+    <title>The Event Registration Page</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/venobox/venobox.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+
+  <header>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand absolute" href="index.html">UniLife</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="event.html">Event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="forum.html">Forum</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="secondhandmarket.html">Second Hand Market</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav absolute-right">
+            <li class="nav-item">
+              <a href="login.html" class="nav-link" id="Login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a href="register.html" class="nav-link" id="Register">Register</a>
+            </li>
+            <li class="nav-item">
+              <a href="UserProfile.html" class="nav-link">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" id="SignOut">Sign Out</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+
+  <body>
+
+    <section class="testimonial py-5" id="testimonial">
+      <div class="container">
+        <div class="row ">
+          <div class="col-md-4 py-5 bg-primary text-white text-center ">
+            <div class=" ">
+              <div class="card-body">
+                <img src="http://www.ansonika.com/mavia/img/registration_bg.svg" style="width:30%">
+                <h2 class="py-3">Edit an Event</h2>
+                <p>Select a picture for the event</p>
+                <input type="file" id="EventPicture" name="someName" value="someValue">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8 py-5 border">
+            <h4 class="pb-4">Please edit with your event details</h4>
+            <form id="Event">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <input id="EventName" name="Event Name" placeholder="Event Name" class="form-control" type="text">
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    Event Date:
+                    <input type="date" id="EventDate" name="venuedate">
+                    <br> Select a time:
+                    <input type="time" id="EventTime" name="usr_time">
+
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <input id="ContactPerson" name="Contact Person" placeholder="Contact Person Mobile No." class="form-control" required="required"
+                        type="text">
+                    </div>
+                    <div class="form-group col-md-6">
+
+                      <select id="EventVenue" class="form-control">
+                        <option selected>Choose Venue ...</option>
+                        <option> Block M</option>
+                        <option> Block C</option>
+                        <option> Block K</option>
+                        <option> Block A</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <textarea id="AddVenue" name="addVenue" placeholder="Enter other venue if not listed" cols="40" rows="5" class="form-control"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <div class="form-group">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                          <label class="form-check-label" for="invalidCheck2">
+                            <small>By clicking Submit, you agree to our Terms & Conditions, Visitor Agreement and Privacy Policy.</small>
+                          </label>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <button type="submit" id="submit" class="btn btn-danger">Update</button>
+                  </div>
+            </form>
+            </div>
+            </div>
+          </div>
+    </section>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase.js"></script>
+    <script src="AccountFirebase.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <script> 
+    $(function () {//onload
+        getEventdetail();
+        $("#Event").submit(function (event) {
+          event.preventDefault();//stop default action
+          var eventid = sessionStorage.getItem("EventId");
+
+          var user = firebase.auth().currentUser;
+
+          var db = firebase.firestore();
+          var EventName = $("#EventName").val();//get content from textbox
+          var EventDate = $("#EventDate").val();//get content from textbox
+          var EventTime = $("#EventTime").val();
+          var ContactPerson = $("#ContactPerson").val();
+          var EventVenue = $("#EventVenue").val();
+          var AddVenue = $("#AddVenue").val()
+
+          db.collection("Event").doc(eventid).update({
+            EventName: EventName,
+            EventDate: EventDate,
+            EventTime: EventTime,
+            ContactPerson: ContactPerson,
+            EventVenue: EventVenue,
+            AddVenue: AddVenue
+          })
+          alert("Update Successful");
+        })
+
+        function getEventdetail() {
+          var db = firebase.firestore();
+          var eventid = sessionStorage.getItem("EventId");
+          console.log(eventid);
+          db.collection("Event").doc(eventid).get().then(function (ee) {
+            $("#EventName").val(ee.data().EventName);
+            $("#AddVenue").val(ee.data().AddVenue);
+            $("#ContactPerson").val(ee.data().ContactPerson);
+            $("#EventDate").val(ee.data().EventDate);
+            $("#EventTime").val(ee.data().EventTime);
+            $("#EventVenue").val(ee.data().EventVenue);
+          })
+        }
+    })
+    </script>
+
+  </body>
+
+  </html>

@@ -1,0 +1,622 @@
+<html lang="en">
+
+<head>
+  <title>Unilife Forum Detail</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <!-- register css -->
+  <link rel="stylesheet" href="css/register/css/style.css">
+
+  <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+  <!-- Theme Style -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+  .ftext {
+    white-space: nowrap;
+    width: 600px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ratingbutton {
+    background-color: rgb(195, 2, 253);
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .edit {
+    text-align: right;
+  }
+</style>
+
+<body>
+
+  <header role="banner">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-light">
+      <div class="container">
+        <a class="navbar-brand absolute" href="index.html">UniLife</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+          aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="event.html">Event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="forum.html">Forum</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="secondhandmarket.html">Second Hand Market</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav absolute-right">
+            <li class="nav-item">
+              <a href="userprofile.html" class="nav-link">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" id="SignOut">Sign Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- END header -->
+
+  <section class="site-hero overlay" data-stellar-background-ratio="0.5"
+    style="background-image: url(images/utar2.jpg);">
+    <div class="container">
+      <div class="row align-items-center site-hero-inner justify-content-center">
+        <div class="col-md-8 text-center">
+
+          <div class="mb-5 element-animate">
+            <h1>Forum</h1>
+            <p class="lead">Sharing is caring</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <body>
+
+    <div id="colorlib-main">
+      <section class="ftco-section ftco-no-pt ftco-no-pb">
+        <div class="container">
+          <div class="row d-flex">
+            <div class="col-xl-8 py-5 px-md-5">
+              <div class="row pt-md-4" id="forumcontent">
+
+              </div>
+              <div class="row pt-md-4" id="forumpicture">
+                <img src="" id="forumimg" width="300" height="300">
+              </div>
+              <div class="row pt-md-4" id="replyforumcontent">
+
+              </div>
+              <!-- END-->
+
+              <form method="POST" id="replyForm">
+                <div class="form-group">
+                  <label for="email">
+                    <i class="zmdi zmdi-email"></i>
+                  </label>
+                  <input type="text" id="username" placeholder="Text" readonly />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">
+                    <i class="zmdi zmdi-email"></i>
+                  </label>
+                  <input type="text" id="replytext" />
+                </div>
+
+                <div class="form-group form-button">
+                  <input type="submit" id="register" class="form-submit" value="Submit" />
+                </div>
+              </form>
+
+              <form method="POST" id="editForm">
+                <div class="form-group row" id="edittopicrow">
+                  Topic:
+                  <div class="col-lg-9">
+                    <input class="formTopic" type="text" id="edittopic">
+                  </div>
+                </div>
+                <div class="form-group row" id="editnamerow">
+                  Current Username:
+                  <div class="col-lg-9">
+                    <input class="formUsername" type="text" id="editusername" readonly>
+                  </div>
+                </div>
+                <div class="form-group row" id="editcategoriesrow">
+                  Select Faculty:
+                  <div class="col-lg-9">
+                    <select id="editselectcategories">
+                      <option value="NORMAL">None</option>
+                      <option value="FICT">FICT</option>
+                      <option value="FAS">FAS</option>
+                      <option value="FBF">FBF</option>
+                      <option value="FEGT">FEGT</option>
+                      <option value="CFS">CFS</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  Description:
+                  <div class="col-lg-9">
+                    <textarea rows="5" cols="75" type="text" id="edittext"></textarea>
+                  </div>
+                </div>
+                <div class="form-group row" id="filerow">
+                  <div class="col-lg-9">
+                    <input type="file" id="forumfile">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-lg-9">
+                    <input type="submit">
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+
+
+
+            <div class="col-xl-4 sidebar ftco-animate bg-light pt-5">
+              <div class="sidebar-box ftco-animate">
+                <h3 class="sidebar-heading">Post User</h3>
+                <a href="#" id="user"><img src="images/defaultprofile.png" id="postuserimg" width="100"
+                    height="100"></a>
+                <p id="postusername"></p>
+                <p id="postuserstudentid"></p>
+              </div>
+            </div>
+            <!-- END COL -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+
+
+
+    <!-- Start Footer -->
+    <footer class="site-footer" style="background-image: url(images/big_image_3.jpg);">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <h3>Proudly present by</h3>
+            <br>
+            <p>
+              <a href="https://www.facebook.com/profile.php?id=100001364526377" target="_blank">
+                <img src="images/zhprofilepic.png" height="42" width="42">Liow Zi Hao</p>
+            </a>
+            <p>
+              <a href="https://www.facebook.com/TouWeiLoong" target="_blank">
+                <img src="images/wlprofilepic.png" height="42" width="42">Tou Wei Loong</p>
+            </a>
+            <p>
+              <a href="https://www.facebook.com/JxKnight" target="_blank">
+                <img src="images/jxprofilepic.png" height="42" width="42">Jia Xun
+                <br>
+            </p>
+            </a>
+            <p>
+              <a href="https://www.facebook.com/xinzhe.lee" target="_blank">
+                <img src="images/xzprofilepic.png" height="42" width="42">Lee Xin Zhe</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- loader -->
+    <div id="loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+          stroke="#f4b214" />
+      </svg>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+
+
+    <script src="js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase.js"></script>
+    <script src="AccountFirebase.js"></script>
+
+
+
+    <script>
+      $(function () {//onload
+        initApp();
+        getForumDetail();
+        $("#forumpicture").hide();
+        var categories = sessionStorage.getItem("Categories");
+        var forumid = sessionStorage.getItem("ForumId");
+        //reply();
+        getReplyForum();
+        $("#SignOut").click(function (e) {
+          firebase.auth().signOut();
+          alert("SignOut Success");
+        });
+
+
+
+        $(document.body).on('click', '.btn-custom', function (e) {
+          $("#replyForm").show();
+          $("#replytext").focus();
+        });
+
+        $(document.body).on('click', '.edit', function (e) {
+          $("#editForm").show();
+          var db = firebase.firestore();
+          var id = (($(this).data('id')).toString()).slice(0, 20);
+          db.collection("Forum").doc(categories).collection("Post").doc(id).get().then(function (e) {
+            //alert(e.id);
+            if (e.exists) {
+              $("#edittopic").val(e.data().Topic);
+              $("#editusername").val(e.data().UN);
+              $("#edittext").val(e.data().Text);
+              $("#editselectcategories").val(categories);
+              $("#filerow").hide();
+              console.log("1");
+            } else {
+              db.collection("Forum").doc(categories).collection("Reply").doc(id).get().then(function (e) {
+                $("#edittopicrow").hide();
+                $("#filerow").hide();
+                $("#editcategoriesrow").hide();
+                $("#editusername").val(e.data().ReplyName);
+                $("#edittext").val(e.data().Text);
+              })
+              console.log("0");
+            }
+          })
+          sessionStorage.setItem("EditId", id);
+        });
+
+        $(document.body).on('click', '.delete', function (e) {
+          var db = firebase.firestore();
+          var id = (($(this).data('id')).toString()).slice(0, 20);
+          db.collection("Forum").doc(categories).collection("Post").doc(id).get().then(function (e) {
+            if (e.exists) {
+              db.collection("Forum").doc(categories).collection("Post").doc(id).delete().then(function (ee) {
+                alert("Delete Successful");
+                window.location.href = "forum.html";//go to next page
+              })
+            } else {
+              db.collection("Forum").doc(categories).collection("Reply").doc(id).get().then(function (s) {
+                db.collection("Forum").doc(categories).collection("Post").doc(s.data().Postid).get().then(function (ss) {
+                  var total = parseInt(ss.data().TotalReply);
+                  console.log(total);
+                  total = total-1;
+                  console.log(total);
+                  db.collection("Forum").doc(categories).collection("Post").doc(s.data().Postid).update({
+                    TotalReply: total
+                  })
+                  db.collection("Forum").doc(categories).collection("Reply").doc(id).delete().then(function (sss) {
+                    alert("Delete Successful");
+                  })
+                })
+                $("#replyforumcontent").html("");
+                getReplyForum();
+              })
+            }
+          })
+          sessionStorage.setItem("EditId", id);
+        });
+
+
+        $(document.body).on('click', '.searchuser', function (e) {
+          var userid = $(this).data('id');
+          console.log(userid);
+          sessionStorage.setItem("UserID", userid);
+          window.location.href = "UserProfile.html";//go to next page
+        });
+
+        $("#user").click(function (e) {
+          var db = firebase.firestore().collection("Forum").doc(categories).collection("Post").doc(forumid).get().then(function (get) {
+            sessionStorage.setItem("UserID", get.data().Uid)
+            window.location.href = "UserProfile.html";//go to next page
+          }).catch(function (error) {
+            $("#errorMessage").show();
+            $("#errorMessage").html("Error adding document: " + error);
+          });
+        });
+
+        $("#editForm").submit(function (event) {
+          event.preventDefault();//stop default action
+          var id = sessionStorage.getItem("EditId");
+          var dbpost = firebase.firestore().collection("Forum").doc(categories).collection("Post").doc(id);
+          var dbreply = firebase.firestore().collection("Forum").doc(categories).collection("Reply").doc(id);
+          var edittext = $("#edittext").val();
+          var topic = $("#edittopic").val();
+          var un = $("#editusername").val();
+          var updatedDateTime = firebase.firestore.FieldValue.serverTimestamp();
+          dbpost.get().then(function (ee) {
+            if (ee.exists) {
+              dbpost.update({
+                Text: edittext, Topic: topic
+              }).catch(function (error) {
+                $("#errorMessage").show();
+                $("#errorMessage").html("Error adding document: " + error);
+              });
+            } else {
+              dbreply.update({
+                Text: edittext
+              }).catch(function (error) {
+                $("#errorMessage").show();
+                $("#errorMessage").html("Error adding document: " + error);
+              });
+            }
+          })
+          $("#forumcontent").html("");
+          getForumDetail();
+          $("#editForm").hide();
+        });
+
+        $(document.body).on('click', '.ratingbutton', function (e) {
+          var replyid = $(this).data('id');
+          var replyscore = replyid + 'rating';
+          var score = $("#" + replyscore).val();
+          var db = firebase.firestore();
+          var obj = new Object();
+          obj.rating = score;
+          obj.CreatedDateTime = firebase.firestore.FieldValue.serverTimestamp();//assign value to CreatedDateTime  column 
+          obj.UpdatedDateTime = firebase.firestore.FieldValue.serverTimestamp();//assign value to UpdatedDateTimeDateTime column 
+
+          db.collection("Forum").doc(categories).collection("Post").doc(replyid).get().then(function (check) {
+            console.log(check.id);
+            if (check.exists) {
+              db.collection("Forum").doc(categories).collection("Post").doc(replyid).collection("Rating").doc(firebase.auth().currentUser.uid).set(obj).then(function (docRef) {
+                alert("Rate Successfully");
+                $("#forumcontent").html("");
+                $("#replyforumcontent").html("");
+                getForumDetail();
+                getReplyForum();
+
+                db.collection("Forum").doc(categories).collection("Post").doc(replyid).get().then(function (e) {
+                  var userid = e.data().Uid;
+                  db.collection("Users").doc(userid).get().then(function (e) {
+
+                    var totalscore = parseInt(e.data().RatingScore);
+                    totalscore = totalscore + parseInt(score);
+                    db.collection("Users").doc(userid).update({
+                      RatingScore: totalscore
+                    })
+                  })
+                })
+              })
+                .catch(function (error) {
+                  $("#errorMessage").show();
+                  $("#errorMessage").html("Error adding document: " + error);
+                });
+              // console.log("1");
+            } else {
+              db.collection("Forum").doc(categories).collection("Reply").doc(replyid).collection("Rating").doc(firebase.auth().currentUser.uid).set(obj).then(function (docRef) {
+                alert("Rate Successfully");
+
+                $("#replyforumcontent").html("");
+                getReplyForum();
+                db.collection("Forum").doc(categories).collection("Reply").doc(replyid).get().then(function (e) {
+                  var userid = e.data().Replyid;
+                  db.collection("Users").doc(userid).get().then(function (e) {
+
+                    var totalscore = parseInt(e.data().RatingScore);
+                    totalscore = totalscore + parseInt(score);
+                    db.collection("Users").doc(userid).update({
+                      RatingScore: totalscore
+                    })
+                  })
+                })
+              })
+                .catch(function (error) {
+                  $("#errorMessage").show();
+                  $("#errorMessage").html("Error adding document: " + error);
+                });
+              //console.log("0");
+            }
+          });
+        });
+      });
+
+      function getForumDetail() {
+        if (typeof (Storage) !== "undefined") {
+          var categories = sessionStorage.getItem("Categories");
+          var forumId = sessionStorage.getItem("ForumId");
+          var db = firebase.firestore();//API firestore database
+          //alert(forumId);
+          var docRef = db.collection("Forum").doc(categories).collection("Post").doc(forumId);
+          docRef.get().then(function (doc) {
+            db.collection("Users").doc(doc.data().Uid).get().then(function (getUserInfo) {
+              $("#postusername").html("Username: " + getUserInfo.data().Username);
+              $("#postuserstudentid").html("Student ID: " + getUserInfo.data().StudentID);
+              $("#postuserimg").attr("src", getUserInfo.data().Photo);
+              //console.log(getUserInfo.data().StudentID);
+            })
+            $("#forumimg").attr("src", doc.data().Photo);
+            if(doc.data().Photo=""){
+              $("#forumpicture").hide();
+            }else{
+              $("#forumpicture").show();
+            }
+            //$("#forumimg").attr("src", doc.data().Photo);
+            console.log(doc.data().Photo);
+            var date = ((doc.data().CreatedDateTime.toDate()).toString()).substring(0, 25);
+            if (doc.data().Uid === firebase.auth().currentUser.uid) {
+              $("#forumcontent").append('<div class=\"text text-2 pl-md-4\"><h3 class=\"mb-2\">' + doc.data().Topic + '</h3><small class=\"text-muted\"> Created by ' + doc.data().UN + 'Created in ' + date + '</small><p class=\"mb-4\">' + doc.data().Text + '</p><a href=\"#\" class=\"edit\" data-id=\"' + doc.id + 'edit\">Edit </a><a href=\"#\" class=\"delete\" data-id=\"' + doc.id + '\"> Delete</a></div>')
+            } else {
+              var checkrate = db.collection("Forum").doc(categories).collection("Post").doc(forumId).collection("Rating").doc(firebase.auth().currentUser.uid);
+              checkrate.get().then(function (cr) {
+                if (cr.exists) {
+                  $("#forumcontent").append('<div class=\"text text-2 pl-md-4\"><h3 class=\"mb-2\">' + doc.data().Topic + '</h3><small class=\"text-muted\"> Created by ' + doc.data().UN + 'Created in ' + date + '</small><p class=\"mb-4\">' + doc.data().Text + '</p><a href=\"#\" class=\"btn-custom\" data-id=\"' + doc.id + '\">  Reply </a>Rate: ' + cr.data().rating + '</div>')
+                } else {
+                  $("#forumcontent").append('<div class=\"text text-2 pl-md-4\"><h3 class=\"mb-2\">' + doc.data().Topic + '</h3><small class=\"text-muted\"> Created by ' + doc.data().UN + 'Created in ' + date + '</small><p class=\"mb-4\">' + doc.data().Text + '</p><a href=\"#\" class=\"btn-custom\" data-id=\"' + doc.id + '\">  Reply </a>Rate: <select name=\"rating\" id="' + doc.id + 'rating\"><option value=\"1\">1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option></select><a href=\"#\" class=\"ratingbutton\" data-id=\"' + doc.id + '\">Submit Rating</a></div>')
+                }
+              })
+            }
+          })
+        } else {
+          // doc.data() will be undefined in this case
+          alert("No such document!");
+        }
+      }
+
+
+      function initApp() {
+        //check user keep in cookie
+        // Listening for auth state changes.
+        // [START authstatelistener]
+        $("#replyForm").hide();
+        $("#editForm").hide();
+        firebase.auth().onAuthStateChanged(function (user) {
+          if (user == null) {
+            window.location.href = "Login.html";
+          }
+          else if (user.displayName == null) {
+            window.location.href = "UserProfile.html";
+          }
+          else {
+            $("#username").val("Your Current Account Name: " + user.displayName);
+          }
+        });
+        // [END authstatelistener]
+      }
+
+
+      function getReplyForum() {
+        var categories = sessionStorage.getItem("Categories");
+        var forumId = sessionStorage.getItem("ForumId");
+        var docPost = firebase.firestore().collection("Forum").doc(categories).collection("Post").doc(forumId);
+        var docReply = firebase.firestore().collection("Forum").doc(categories).collection("Reply");
+        docPost.get().then(function (doc) {
+          forumtext = doc.data().Text;
+        }).catch(function (error) {
+          alert("Error getting document:", error);
+        });
+        //get data from Users table where created by current login user
+        docReply.where("Postid", "==", forumId).onSnapshot(function (snapshot) {
+          snapshot.docChanges().forEach(function (change) {
+            var date = ((change.doc.data().CreatedDateTime.toDate()).toString()).substring(0, 25);
+            if (change.type === "added") {
+              var checkrate = docReply.doc(change.doc.id).collection("Rating").doc(firebase.auth().currentUser.uid);
+              checkrate.get().then(function (cr) {
+                if (cr.exists) {
+                  if (change.doc.data().Replyid === firebase.auth().currentUser.uid) {
+                    $("#replyforumcontent").append('<div class=\"col-md-12\"  id=\"' + change.doc.id + '\"><div class=\"blog-entry ftco-animate d-md-flex\"><div class=\"text text-2 pl-md-4\"><h3 class=\"mb-2\"> Reply-->' + forumtext + '</a></h3><a href=\"#\" class=\"searchuser\" data-id="' + change.doc.data().Replyid + '"><small class=\"text-muted\"> Created by ' + change.doc.data().ReplyName + '</small></a></h3><div class=\"meta-wrap\"><p class=\"meta\"><span><small class=\"text-muted\">' + date + '</small></span></p></div><p class=\"ftext\">' + change.doc.data().Text + '</p><a href=\"#\" class=\"edit\" data-id=\"' + change.doc.id + 'edit\">Edit</a><a href=\"#\" class=\"delete\" data-id=\"' + change.doc.id + '\"> Delete</a><a href=\"#\" class=\"btn-custom\" data-id=\"' + change.doc.id + '\">  Reply </a></div></div></div>')
+                  } else {
+                    $("#replyforumcontent").append('<div class=\"col-md-12\"  id=\"' + change.doc.id + '\"><div class=\"blog-entry ftco-animate d-md-flex\"><div class=\"text text-2 pl-md-4\"><h3 class=\"mb-2\"> Reply-->' + forumtext + '</a></h3><a href=\"#\" class=\"searchuser\" data-id="' + change.doc.data().Replyid + '"><small class=\"text-muted\"> Created by ' + change.doc.data().ReplyName + '</small></a></h3><div class=\"meta-wrap\"><p class=\"meta\"><span><small class=\"text-muted\">' + date + '</small></span></p></div><p class=\"ftext\">' + change.doc.data().Text + '</p><a href=\"#\" class=\"btn-custom\" data-id=\"' + change.doc.id + '\">  Reply </a>Rate: ' + cr.data().rating + '</div></div></div>')
+                  }
+                } else {
+                  if (change.doc.data().Replyid === firebase.auth().currentUser.uid) {
+                    $("#replyforumcontent").append('<div class=\"col-md-12\"  id=\"' + change.doc.id + '\"><div class=\"blog-entry ftco-animate d-md-flex\"><div class=\"text text-2 pl-md-4\"><h3 class=\"mb-2\"> Reply-->' + forumtext + '</a><a href=\"#\" class=\"searchuser\" data-id="' + change.doc.data().Replyid + '"></h3><small class=\"text-muted\"> Created by ' + change.doc.data().ReplyName + '</small></a></h3><div class=\"meta-wrap\"><p class=\"meta\"><span><small class=\"text-muted\">' + date + '</small></span></p></div><p class=\"ftext\">' + change.doc.data().Text + '</p><a href=\"#\" class=\"edit\" data-id=\"' + change.doc.id + 'edit\">Edit</a><a href=\"#\" class=\"delete\" data-id=\"' + change.doc.id + '\"> Delete</a><a href=\"#\" class=\"btn-custom\" data-id=\"' + change.doc.id + '\">  Reply </a></div></div></div>')
+                  } else {
+                    $("#replyforumcontent").append('<div class=\"col-md-12\"  id=\"' + change.doc.id + '\"><div class=\"blog-entry ftco-animate d-md-flex\"><div class=\"text text-2 pl-md-4\"><h3 class=\"mb-2\"> Reply-->' + forumtext + '</a><a href=\"#\" class=\"searchuser\" data-id="' + change.doc.data().Replyid + '"></h3><small class=\"text-muted\"> Created by ' + change.doc.data().ReplyName + '</small></a></h3><div class=\"meta-wrap\"><p class=\"meta\"><span><small class=\"text-muted\">' + date + '</small></span></p></div><p class=\"ftext\">' + change.doc.data().Text + '</p><a href=\"#\" class=\"btn-custom\" data-id=\"' + change.doc.id + '\">  Reply </a>Rate: <select name=\"rating\" id="' + change.doc.id + 'rating\"><option value=\"1\">1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option></select><a href=\"#\" class=\"ratingbutton\" data-id=\"' + change.doc.id + '\">Submit Rating</a></div></div></div>')
+                  }
+                }
+              });
+              //console.log(change.doc.id);
+            }
+            if (change.type === "modified") {//Get realtime update data with Cloud Firestore
+              var checkrate = docReply.doc(change.doc.id).collection("Rating").doc(firebase.auth().currentUser.uid);
+              checkrate.get().then(function (cr) {
+                if (cr.exists) {
+                  if (change.doc.data().Replyid === firebase.auth().currentUser.uid) {
+                    $("#replyforumcontent").append('<div class=\"col-md-12\"  id=\"' + change.doc.id + '\"><div class=\"blog-entry ftco-animate d-md-flex\"><div class=\"text text-2 pl-md-4\"><h3 class=\"mb-2\"> Reply-->' + forumtext + '</a></h3><small class=\"text-muted\"> Created by ' + change.doc.data().ReplyName + '</small></h3><div class=\"meta-wrap\"><p class=\"meta\"><span><small class=\"text-muted\">' + change.doc.data().CreatedDateTime.toDate() + '</small></span></p></div><p class=\"ftext\">' + change.doc.data().Text + '</p><a href=\"#\" class=\"delete\" data-id=\"' + change.doc.id + '\"> Delete</a></div></div></div>')
+                  } else {
+                    $("#replyforumcontent").append('<div class=\"col-md-12\"  id=\"' + change.doc.id + '\"><div class=\"blog-entry ftco-animate d-md-flex\"><div class=\"text text-2 pl-md-4\"><h3 class=\"mb-2\"> Reply-->' + forumtext + '</a></h3><small class=\"text-muted\"> Created by ' + change.doc.data().ReplyName + '</small></h3><div class=\"meta-wrap\"><p class=\"meta\"><span><small class=\"text-muted\">' + change.doc.data().CreatedDateTime.toDate() + '</small></span></p></div><p class=\"ftext\">' + change.doc.data().Text + '</p><a href=\"#\" class=\"edit\" data-id=\"' + change.doc.id + 'edit\">Edit</a>Rate: ' + cr.data().rating + '</div></div></div>')
+                  }
+                } else {
+                  if (change.doc.data().Replyid === firebase.auth().currentUser.uid) {
+                    $("#replyforumcontent").append('<div class=\"col-md-12\"  id=\"' + change.doc.id + '\"><div class=\"blog-entry ftco-animate d-md-flex\"><div class=\"text text-2 pl-md-4\"><h3 class=\"mb-2\"> Reply-->' + forumtext + '</a></h3><small class=\"text-muted\"> Created by ' + change.doc.data().ReplyName + '</small></h3><div class=\"meta-wrap\"><p class=\"meta\"><span><small class=\"text-muted\">' + change.doc.data().CreatedDateTime.toDate() + '</small></span></p></div><p class=\"ftext\">' + change.doc.data().Text + '</p><a href=\"#\" class=\"delete\" data-id=\"' + change.doc.id + '\"> Delete</a></div></div></div>')
+                  } else {
+                    $("#replyforumcontent").append('<div class=\"col-md-12\"  id=\"' + change.doc.id + '\"><div class=\"blog-entry ftco-animate d-md-flex\"><div class=\"text text-2 pl-md-4\"><h3 class=\"mb-2\">Reply-->' + forumtext + '</a></h3><small class=\"text-muted\"> Created by ' + change.doc.data().ReplyName + '</small></h3><div class=\"meta-wrap\"><p class=\"meta\"><span><small class=\"text-muted\">' + change.doc.data().CreatedDateTime.toDate() + '</small></span></p></div><p class=\"ftext\">' + change.doc.data().Text + '</p>Rate: <select name=\"rating\" id="' + change.doc.id + 'rating\"><option value=\"1\">1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option></select><a href=\"#\" class=\"ratingbutton\" data-id=\"' + change.doc.id + '\">Submit Rating</a></div></div></div>')
+                  }
+                }
+              });
+            }
+            if (change.type === "removed") {//Get realtime delete  data with Cloud Firestore
+              var id = "#" + change.doc.id;
+              $(id).remove();
+            }
+          });
+        });
+      };
+
+      $("#replyForm").submit(function (event) {
+        event.preventDefault();//stop default action
+        var text = $("#replytext").val();//get content from textbox
+        var categories = sessionStorage.getItem("Categories");
+        var forumId = sessionStorage.getItem("ForumId");
+        var obj = new Object();//create table
+        obj.Postid = forumId;
+        obj.ReplyName = firebase.auth().currentUser.displayName;
+        obj.Replyid = firebase.auth().currentUser.uid;//assign value to Uid column 
+        obj.Text = text;//assign value to text column 
+        obj.CreatedDateTime = firebase.firestore.FieldValue.serverTimestamp();//assign value to CreatedDateTime  column 
+        obj.UpdatedDateTime = firebase.firestore.FieldValue.serverTimestamp();//assign value to UpdatedDateTimeDateTime column 
+
+        var db = firebase.firestore().collection("Forum").doc(categories).collection("Reply");
+        db.add(obj)
+          .then(function (docRef) {
+            alert("Insert Successfully");
+            $("#replytext").val("");
+            $("#replyForm").hide();
+          })
+          .catch(function (error) {
+            $("#errorMessage").show();
+            $("#errorMessage").html("Error adding document: " + error);
+          });
+
+        var addReply = firebase.firestore().collection("Forum").doc(categories).collection("Post").doc(forumId);
+        addReply.get().then(function (get) {
+          var total = get.data().TotalReply;
+          total = total + 1;
+          addReply.update({
+            TotalReply: total
+          })
+        })
+      });
+
+
+
+    </script>
+
+  </body>
+
+</html>

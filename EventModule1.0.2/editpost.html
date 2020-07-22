@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <title>TheEvent - Bootstrap Event Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/venobox/venobox.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    Theme Name: TheEvent
+    Theme URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+    <header>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand absolute" href="G:\1.0.5\index.html">UniLife</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="G:\1.0.5\index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="allEvent.html">Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="forum.html">Forum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="secondhandmarket.html">Second Hand Market</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav absolute-right">
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link" id="Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="register.html" class="nav-link" id="Register">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="UserProfile.html" class="nav-link">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" id="SignOut">Sign Out</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <body>
+        <button id="GetUpload" type="button" class="btn" style="float:right;background-color:blue">
+            <a href="eventpost.html">Set up an event</a>
+		<button id="Edit" type="button" class="btn" style="float:right;background-color:Green">
+            <a href="editpost.html">Edit an event</a>
+        </button>
+        <div class="container">
+            <div class="row" id="eventcontent">
+                <!-- <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]"id="event_loop">
+				<ul class="event-list">
+					
+					<li>
+						<time datetime="2014-07-20 0000">
+							<span class="day"> </span>
+							<span class="month"> </span>
+							<span class="year"> </span>
+							
+                        </time>
+                        <img alt="My 24th Birthday!" src="https://farm5.staticflickr.com/4150/5045502202_1d867c8a41_q.jpg" />
+						<div class="info">
+							<h2 class ="Eventtitle" id="title">One Piece Unlimited World Red</h2>
+                            <p class="Eventtime" id"time">Event Time</p>
+                            
+							<ul>
+								<li style="width:50%;"><a href="Registration.html"><span class="fas fa-globe"></span> Register</a></li>
+								<li style="width:50%;"><span class="fas fa-info"></span>Details</li>
+							</ul>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
+
+					
+				</ul>
+			</div> -->
+            </div>
+        </div>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery-migrate-3.0.0.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/jquery.stellar.min.js"></script>
+  
+  
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase.js"></script>
+        <script src="AccountFirebase.js"></script>
+        <script>
+            $(function () {//onload
+                getEvent();
+
+
+            function getEvent() {
+                var db = firebase.firestore();
+                db.collection("Event").onSnapshot(function (snapshot) {
+                    snapshot.docChanges().forEach(function (change) {
+                        
+                      
+                        if (change.type === "added") {//Get realtime new added data  with Cloud Firestore
+                            $("#eventcontent").append('<div class=\"[ col-xs-12 col-sm-offset-2 col-sm-8 ]\"id=\"event_loop\"><ul class=\"event-list\"><li><time datetime=\"2014-07-20 0000\"><span class=\"day\">'+(change.doc.data().EventDate.toString()).substring(8,10) +' </span><span class=\"month\"> '+(change.doc.data().EventDate.toString()).substring(5,7) +' </span><span class=\"year\">'+(change.doc.data().EventDate.toString()).substring(0,4) +' </span></time><img alt=\"My 24th Birthday!\" src=\"https://farm5.staticflickr.com/4150/5045502202_1d867c8a41_q.jpg\" /><div class=\"info\"><h2 class =\"Eventtitle\" id=\"title\">'+(change.doc.data().EventName.toString())+'</h2><p class=\"Eventtime\" id\"time\">'+(change.doc.data().EventTime.toString())+'</p><p class=\"Eventvenue\" id\"venue\">'+(change.doc.data().EventVenue.toString())+'</p><ul><li style=\"width:50%;\"><a href=\"#\" class =\"geteventid\" data-id=\"' +change.doc.id +'\"><span class=\"fas fa-globe\"></span> Edit</a></li><li style=\"width:50%;\"><span class=\"fas fa-info\"></span><a href=\"#\" class =\"eventdelete\" data-id=\"' +change.doc.id +'\">Delete</li></ul></div><div class=\"social\"><ul><li class=\"facebook\" style=\"width:33%;\"><a href=\"#facebook\"><span class=\"fa fa-facebook\"></span></a></li><li class=\"twitter\" style=\"width:34%;\"><a href=\"#twitter\"><span class=\"fa fa-twitter\"></span></a></li><li class=\"google-plus\" style=\"width:33%;\"><a href=\"#google-plus\"><span class=\"fa fa-google-plus\"></span></a></li></ul></div></li></ul></div>')
+                        }
+                        if (change.type === "modified") {//Get realtime update data with Cloud Firestore
+                            var id = "#" + change.doc.id;
+                            $("#eventcontent").append('<div class=\"[ col-xs-12 col-sm-offset-2 col-sm-8 ]\"id=\"event_loop\"><ul class=\"event-list\"><li><time datetime=\"2014-07-20 0000\"><span class=\"day\">'+(change.doc.data().EventDate.toString()).substring(8,10) +' </span><span class=\"month\"> '+(change.doc.data().EventDate.toString()).substring(5,7) +' </span><span class=\"year\">'+(change.doc.data().EventDate.toString()).substring(0,4) +' </span></time><img alt=\"My 24th Birthday!\" src=\"https://farm5.staticflickr.com/4150/5045502202_1d867c8a41_q.jpg\" /><div class=\"info\"><h2 class =\"Eventtitle\" id=\"title\">'+(change.doc.data().EventName.toString())+'</h2><p class=\"Eventtime\" id\"time\">'+(change.doc.data().EventTime.toString())+'</p><p class=\"Eventvenue\" id\"venue\">'+(change.doc.data().EventVenue.toString())+'</p><ul><li style=\"width:50%;\"><a href=\"#\" class =\"geteventid\" data-id=\"' +change.doc.id +'\"><span class=\"fas fa-globe\"></span> Edit</a></li><li style=\"width:50%;\"><span class=\"fas fa-info\"></span><a href=\"#\" class =\"eventdelete\" data-id=\"' +change.doc.id +'\">Delete</li></ul></div><div class=\"social\"><ul><li class=\"facebook\" style=\"width:33%;\"><a href=\"#facebook\"><span class=\"fa fa-facebook\"></span></a></li><li class=\"twitter\" style=\"width:34%;\"><a href=\"#twitter\"><span class=\"fa fa-twitter\"></span></a></li><li class=\"google-plus\" style=\"width:33%;\"><a href=\"#google-plus\"><span class=\"fa fa-google-plus\"></span></a></li></ul></div></li></ul></div>')
+                        }
+                        if (change.type === "removed") {//Get realtime delete  data with Cloud Firestore
+                            var id = "#" + change.doc.id;
+                            $(id).remove();
+                        }
+                    })
+                })
+            }
+        });
+        $(document.body).on('click', '.geteventid', function (e) { //btn-update class bind click event
+            if (typeof (Storage) !== "undefined") {
+              var eventid = $(this).data('id');
+              sessionStorage.setItem("EventId", eventid);
+              var db = firebase.firestore();
+              window.location.href = "editpostpage.html";//go to next page
+            }
+          });
+          $(document.body).on('click', '.eventdelete', function (e) { //btn-update class bind click event
+            if (typeof (Storage) !== "undefined") {
+              var eventid = $(this).data('id');
+              var db = firebase.firestore();
+              db.collection("Event").doc(eventid).delete().then(function(e){
+                  alert("Delete Successful");
+                  $("#eventcontent").html("");
+                  getEvent();
+              })
+            }
+          });
+        
+        
+
+
+        </script>
+    </body>

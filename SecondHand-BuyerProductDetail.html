@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Colorlib Listed Directory Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/secondhand-style.css">
+    <!-- Thumb up-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Chat box css */
+        .form-container textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            resize: none;
+            min-height: 200px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        /* Chat box css */
+    </style>
+</head>
+
+<body>
+    <header role="banner">
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-light">
+            <div class="container">
+                <a class="navbar-brand absolute" href="index.html">UniLife</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+                    aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="EventModule1.0.2\allEvent.html">Event</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="forum.html">Forum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="SecondHand-BuyerListView.html">Second Hand Market</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav absolute-right">
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link" id="Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="register.html" class="nav-link" id="Register">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="UserProfile.html" class="nav-link">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" id="SignOut">Sign Out</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- END header -->
+
+    <section class="site-hero overlay" data-stellar-background-ratio="0.5"
+        style="background-image: url(images/utar2.jpg);">
+        <div class="container">
+            <div class="row align-items-center site-hero-inner justify-content-center">
+                <div class="col-md-8 text-center">
+
+                    <div class="mb-5 element-animate">
+                        <h1>Product Detail </h1>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- --------------- -->
+
+    <div class="container">
+
+
+        <form action="#" method="post" id="BasicInfo">
+            <!-- Left Column / Headphones Image -->
+            <br>
+            <h2><b>Product Detail</b></h2>
+            <div class="column">
+
+                <img id="DetailPicture" src="" max width="1000px" max height="800px">
+            </div>
+            <!-- -------------Thumb- -->
+            <button style="font-size:20px" id="thumb"><i class="fa fa-thumbs-up"></i></button>
+            <!-- -------------Thumb- -->
+            <div class="column bg-alt">
+                <div class="product-description">
+                    <label for id="detailName"><b>Product Name: </b></label>
+                </div>
+                <div class="product-description">
+                    <label for id="detailDesc"><b>Description: </b> </label>
+                </div>
+
+                <div class="product-description">
+                    <label for id="detailPrice"><b>Price:RM </b> </label>
+                </div>
+
+                <div class="product-description">
+                    <label for id="detailUsed"><b>Used Time(Days): </b> </label>
+                </div>
+                <div>
+                    <button class="btn btn-indigo" id="addcart" type="button" onclick="CartList()">Add to
+                        Cart</button>
+
+                    <button class="btn btn-indigo" id="purchase" type="button" onclick="myFunction2()">Purchase</button>
+                    </br>
+
+                    </br>
+
+                    <!-- -------------Chat box ---->
+
+
+                </div>
+
+            </div>
+    </div>
+
+    </form>
+    <!-- --------------Chat box ---->
+    <button class="open-button" onclick="openForm()">Chat with seller</button>
+
+    <div class="chat-popup" id="myForm">
+        <form action="#" class="form-container">
+
+
+            <label for="msg"><b>Message</b></label>
+            <textarea placeholder="Type message.." name="msg" required></textarea>
+
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+    <!-- -------------- -->
+
+    <footer class="site-footer" style="background-image: url(images/big_image_3.jpg);">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-4">
+                    <h3>Proudly present by</h3><br>
+                    <p><a href="https://www.facebook.com/profile.php?id=100001364526377" target="_blank"><img
+                                src="images/zhprofilepic.png" height="42" width="42">Liow Zi Hao</p></a>
+                    <p><a href="https://www.facebook.com/TouWeiLoong" target="_blank"><img src="images/wlprofilepic.png"
+                                height="42" width="42">Tou Wei Loong</p></a>
+                    <p><a href="https://www.facebook.com/JxKnight" target="_blank"><img src="images/jxprofilepic.png"
+                                height="42" width="42">Jia Xun<br></p></a>
+                    <p><a href="https://www.facebook.com/xinzhe.lee" target="_blank"><img src="images/xzprofilepic.png"
+                                height="42" width="42">Lee Xin Zhe</p></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END footer -->
+
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#f4b214" /></svg></div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+
+
+    <script src="js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase.js"></script>
+    <script src="AccountFirebase.js"></script>
+
+    <script>
+        $(function () {//onload
+            $("#SignOut").show();
+            $("#Login").hide();
+            $("#Register").hide();
+            sessionStorage.removeItem("UserID");
+            sessionStorage.removeItem("Categories");
+            sessionStorage.removeItem("ForumId");
+            initApp();
+            ProductDetail();
+
+            $("#SignOut").click(function (e) {
+                firebase.auth().signOut();
+                alert("SignOut Success");
+            });
+
+
+        });
+
+
+        function myFunction2() {
+            alert(" Purchase the product sucessfully,redirect back to previous page");
+            window.location.href = "SecondHand-BuyerListView.html";
+        }
+        //chat box
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+        //chat box
+        function ProductDetail() {
+
+            if (typeof (Storage) !== "undefined") {
+
+                var ProductId = sessionStorage.getItem("ProductId");//retrieve
+
+                var db = firebase.firestore();//API firestore database
+
+                var docRef = db.collection("MarketUpload").doc(ProductId);//get data from cities table by primary key 
+
+                docRef.get().then(function (doc) {
+                    if (doc.exists) {
+
+                        $("#detailName").append(doc.data().ProductName);
+                        $("#detailDesc").append(doc.data().Descript);
+                        $("#detailUsed").append(doc.data().Useddate);
+                        $("#detailPrice").append(doc.data().Price);
+                        $("#DetailPicture").attr("src", doc.data().ProductPhoto);
+                    } else {
+                        // doc.data() will be undefined in this case
+                        alert("No such document!");
+                    }
+                }).catch(function (error) {
+                    alert("Error getting document:", error);
+                });
+            }
+        }
+
+
+        function initApp() {
+
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user == null) {
+                    alert("Please Login to continue the Action.")
+                    window.location.href = "Login.html";
+                }
+                else {
+                    $("#").val(user.displayName);
+                }
+
+            });
+
+        }
+
+        //__Cart__
+        function CartList() {
+
+
+            //____________Session Storage  set for cART_______________
+
+            //____________Session Storage _______________
+            alert(" Add to Cart sucessfully");
+            window.location.href = "SecondHandCart.html";
+        }
+    </script>
+</body>
+
+</html>
